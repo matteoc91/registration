@@ -3,7 +3,7 @@ package com.matteo.structures.authentication.errors;
 import com.matteo.structures.authentication.utils.ApplicationContextUtils;
 import com.matteo.structures.authentication.utils.MessagesRegistry;
 
-public class MessageErrorObject extends ErrorObject {
+public class MessageErrorObject extends ErrorAbstractObject {
 	
 	private String key;
 	private String message;
@@ -14,8 +14,7 @@ public class MessageErrorObject extends ErrorObject {
 		this.messagesRegistry = 
 				ApplicationContextUtils.getApplicationContext().getBean(MessagesRegistry.class);
 	}
-
-	@Override
+	
 	public void manageError() {
 		if (this.messagesRegistry != null) {
 			this.messagesRegistry.addMessage(this.key, this.message);

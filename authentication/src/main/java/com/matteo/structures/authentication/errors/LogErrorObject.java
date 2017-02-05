@@ -3,7 +3,7 @@ package com.matteo.structures.authentication.errors;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-public class LogErrorObject extends ErrorObject {
+public class LogErrorObject extends ErrorAbstractObject {
 	
 	private final Log log = LogFactory.getLog(this.getClass());
 	
@@ -15,7 +15,6 @@ public class LogErrorObject extends ErrorObject {
 		super(errorsRegistry);
 	}
 	
-	@Override
 	public void manageError() {
 		log.error("[ERROR] - Occured in class " + this.objectClass + " method " + this.methodName);
 		log.error("[ERROR] - " + this.message);

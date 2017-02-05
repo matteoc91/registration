@@ -1,15 +1,10 @@
 package com.matteo.structures.authentication.errors;
 
-public abstract class ErrorObject {
-	
-	public ErrorObject(ErrorsRegistry errorsRegistry) {
-		errorsRegistry.addError(this);
-	}
-	
+public interface ErrorObject {
 
 	/**
 	 * Manage error
 	 */
-	public abstract void manageError();
+	public void manageError();
 	
 }
